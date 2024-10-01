@@ -1,0 +1,17 @@
+header {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+footer {
+    text-align: center;
+    color: grey;
+    font-size: 0.9em;
+}
+
+.kartya {
+    width: 10px;
+    height: 15px;
+    color: olivedrab;
+}
