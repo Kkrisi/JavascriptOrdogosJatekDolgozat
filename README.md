@@ -1,3 +1,7 @@
+Jatek Leiras:
+
+----------------------------------------------------------
+
 MVC - dolgozat A
 Készíts játékot az alábbiak szerint MVC modellel!
 
