@@ -1,4 +1,5 @@
 
+import Kartya from "./Kartya.js";
 
 
 export default class JatekTer {
@@ -8,30 +9,34 @@ export default class JatekTer {
     constructor(lista){
         
         this.#lista = lista;
+
         this.szuloElem = $(".eredmeny");
+        this.osszerakHTML();
 
         this.szuloElem.empty();
         this.kiír();
 
     }
 
+
     osszerakHTML(){
         this.szuloElem.append(`<div></div>`);
     }
 
+
     kiír(){
-        for (let i = 0; i < 20; i++) {
-            new Kartya(this.#lista, i, this.szuloElem);
+        for (let index = 0; index < 20; index++) {
+            new Kartya(this.#lista, index);
         }
     }
 
+
     setSzoveg(){
-        //this.#szuloElem.;
+        this.szuloElem.append("szöveg");
     }
 
 }
 
 
-Hozz létre egy html elemet az eredmény kiírásának is! Fogd meg ezt az elemet!
-Írj hozzá setterrt, amivel beállíthatod az elem szöveges tartalmát! (setSzoveg)
-Példányosítsd a Kartya osztályt annyiszor, ahány eleme van a listának!
+
+

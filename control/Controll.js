@@ -13,31 +13,20 @@ export default class Controll{
 
         new JatekTer(lista);
 
-        const ellenorzes = this.copyModell.ellenorzes();
 
-        const szoveg = new JatekTer(lista).setSzoveg();
-        alert(szoveg);
+        //JatekTer().setSzoveg();
+
+        this.esemenyKezelo();
 
     }
 
     esemenyKezelo(){
         $(window).on("kattint", (event) => {
-            this.copyModell = new Modell();
-            const lista = this.copyModell.getLista();
+
+            this.copyModell.ellenorzes();
 
             new JatekTer(lista);
+
         })
     }
-
 }
-
-
-
-Controller
-
-Példányosítsd a modellt!✅
-Kérd le a modellből a listát!✅
-Példányosítsd a view-t!✅
-Iratkozz fel a Kartya osztály eseménykezelőjére!✅
-Az eseménykezelőben hívd meg a modell ellenorzes metódusát!✅
-Hívd meg a Jatekter setSzoveg metódusát, és írd ki a szövegesen az eredményt a képernyőre!

@@ -4,16 +4,16 @@
 
 export default class Kartya {
 
-    #lista;         //Állítsd be az adattagokat! 
+    #lista;       
     #index;
-    #szuloElem;
 
-    constructor(lista, index, szuloElem){
+    constructor(lista, index){
 
         this.#lista = lista;
         this.#index = index;
 
-        this.#szuloElem = $(".tartalom");
+        this.szuloElem = $(".tartalom");
+
         this.htmlOsszerak();
 
         this.esemenyKezelo();
@@ -22,11 +22,11 @@ export default class Kartya {
 
     htmlOsszerak(){
         const felepites = `<div class="kartya"></div>`
-        felepites.append(this.#szuloElem);
+        this.szuloElem.append(felepites)
     }
 
     esemenyKezelo(){
-        this.#szuloElem.on("click", () => {
+        this.szuloElem.on("click", () => {
             const e = new CustomEvent("kattint", {detail: this.#index})
             window.dispatchEvent(e)
 

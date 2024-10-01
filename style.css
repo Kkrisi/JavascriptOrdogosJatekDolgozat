@@ -11,7 +11,13 @@ footer {
 }
 
 .kartya {
-    width: 10px;
-    height: 15px;
-    color: olivedrab;
+    width: 70px;
+    height: 70px;
+    border: black 1px solid;
+    margin: 5px;
+}
+
+.tartalom{
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
 }
