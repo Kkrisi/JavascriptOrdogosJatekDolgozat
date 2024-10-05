@@ -7,15 +7,12 @@ export default class JatekTer {
     #lista = [];
 
     constructor(lista){
-        
         this.#lista = lista;
-
         this.szuloElem = $(".eredmeny");
+        
+        this.szuloElem.empty(); // Clear before appending elements
         this.osszerakHTML();
-
-        this.szuloElem.empty();
         this.kiír();
-
     }
 
 
@@ -31,8 +28,8 @@ export default class JatekTer {
     }
 
 
-    setSzoveg(){
-        this.szuloElem.append("szöveg");
+    setSzoveg(szoveg) {
+        this.szuloElem.text(szoveg);  // Az eredményt írja ki
     }
 
 }

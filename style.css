@@ -1,6 +1,6 @@
 header {
     text-align: center;
-    margin-top: 20px;
+    padding: 20px;
     font-size: 1.3em;
 }
 
@@ -8,16 +8,50 @@ footer {
     text-align: center;
     color: grey;
     font-size: 0.9em;
+    padding: 20px;
 }
 
 .kartya {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 160px;
     border: black 1px solid;
     margin: 5px;
+    background-color: lightblue;
+    text-align: center;
+    font-size: 3em;
+    border-radius: 5px;
+    padding-top: 40px;
+    margin-bottom: 20px;
+}
+
+.felforditott{
+    background-color: burlywood;
 }
 
 .tartalom{
     display:grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+
+
+
+/*    Reszponzivitás   */
+
+@media (max-width: 800px) {
+    .tartalom {
+        grid-template-columns: repeat(4, 1fr); /* 4 oszlop */
+    }
+}
+
+@media (max-width: 600px) {
+    .tartalom {
+        grid-template-columns: repeat(3, 1fr); /* 3 oszlop */
+    }
+}
+
+@media (max-width: 400px) {
+    .tartalom {
+        grid-template-columns: repeat(2, 1fr); /* 2 oszlop */
+    }
 }

@@ -21,17 +21,21 @@ export default class Kartya {
     }
 
     htmlOsszerak(){
-        const felepites = `<div class="kartya"></div>`
-        this.szuloElem.append(felepites)
+        this.kartyaElem = $(`<div class="kartya"></div>`); // Store the card element for later use
+        this.szuloElem.append(this.kartyaElem);
     }
-
+    
     esemenyKezelo(){
-        this.szuloElem.on("click", () => {
-            const e = new CustomEvent("kattint", {detail: this.#index})
-            window.dispatchEvent(e)
+        this.kartyaElem.on("click", () => {
+            const e = new CustomEvent("kattint", { detail: this.#index });
+            window.dispatchEvent(e);
+    
+            this.kartyaElem.text(this.#lista[this.#index]);
+            this.kartyaElem.addClass("felforditott");
 
-            //alert(this.#lista[this.#index]);
-            felepites.append(this.#lista[this.#index]);
+            if (this.#lista[this.#index] === '👺') {
+                $(".kartya").off("click"); // Minden kártyára kikapcsolja a kattintási eseményt
+            }
         });
     }
 
