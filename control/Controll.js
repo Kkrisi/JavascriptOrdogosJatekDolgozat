@@ -18,23 +18,16 @@ export default class Controll{
         //JatekTer().setSzoveg();
 
         this.esemenyKezelo();
-        this.jatekVege = false;  // A játék vége jelző
 
     }
 
-    esemenyKezelo() {
+    esemenyKezelo(){
         $(window).on("kattint", (event) => {
-            if (!this.jatekVege) {
-                const index = event.detail;
-                const eredmeny = this.copyModell.ellenorzes(index);
-
-                if (eredmeny === "Elvitt az ördög!") {
-                    this.jatekVege = true;  // Leállítja a további eseményeket
-                    this.jatekTer.setSzoveg("Vesztettél! Elvitt az ördög!");  // Kiírja, hogy veszítettél
-                } else {
-                    this.jatekTer.setSzoveg("Megmentettek a jó lelkek!");
-                }
-            }
+            this.copyModell.ellenorzes(event.detail);
+            const lista = this.copyModell.getLista();
+            
+            this.jatekTer.empty(); 
+            new JatekTer(lista);
         });
     }
 }
